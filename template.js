@@ -1,6 +1,6 @@
 import getDataForDay from './getData.js';
 
-getDataForDay(2)
+getDataForDay(X)
   .then(data => {
 
   }
