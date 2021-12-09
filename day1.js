@@ -1,8 +1,8 @@
 import getDataForDay from './getData.js';
 
 getDataForDay(1)
-.then(text => {
-  const numbersArray = text.split("\n").map(string => parseInt(string))
+.then(text => text.split("\n").map(string => parseInt(string)))
+.then(numbersArray => {
   let increased = 0
   for (const index of numbersArray.keys() ) if (numbersArray[index] > numbersArray[index - 1]) increased++
   console.log('first part: ', increased, 'items increased')
