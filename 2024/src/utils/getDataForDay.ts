@@ -22,10 +22,10 @@ const getDataForDay = async (day: number): Promise<string> => {
         const json: CachedDay = {
             day: day,
             fetchedAt: new Date().toISOString(),
-            dataString: latestData
+            dataString: latestData.trim()
         }
         await fs.writeFile(`src/cache/day${day}.json`, JSON.stringify(json));
-        return latestData;
+        return latestData.trim();
     }
 }
 
