@@ -1,12 +1,16 @@
 import * as fs from 'node:fs/promises';
 
+export type Day = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
+| 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20
+| 21 | 22 | 23 | 24 | 25
+
 type CachedDay = {
-    day: number;
+    day: Day;
     fetchedAt: string;
     dataString: string;
 }
 
-const getDataForDay = async (day: number): Promise<string> => {
+const getDataForDay = async (day: Day): Promise<string> => {
     try {
         const cachedData = require(`../cache/day${day}.json`) as CachedDay;
         return cachedData.dataString;
